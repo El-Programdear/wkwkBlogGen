@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+	<meta charset="UTF-8">
+	<title>わくわくブログジェネレーター</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<link rel="stylesheet" href="./css/reset.css">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M"
+	  crossorigin="anonymous">
+	<link rel="stylesheet" href="./css/blog_gen_styles.css">
+	<link rel="stylesheet" href="./css/talk_styles.css">
+</head>
+
+<body>
+	<div class="container">
+		<div class="row">
+			<div id="app" class="col">
+				<div id=gen>
+					<h1>わくわくブログジェネレーター</h1>
+
+					<!-- キャラ画像のパス -->
+					<h2>①キャラ設定</h2>
+					<h3>キャラ画像のパス入力</h3>
+
+					<span class="char_a">キャラA</span>
+					<input class="pathInput" type="text" v-model="imgPath_01" placeholder="画像パスを入力してください"></input>
+					<br>
+					<span class="char_b">キャラB</span>
+					<input class="pathInput" type="text" v-model="imgPath_02" placeholder="画像パスを入力してください"></input>
+					<br>
+					<span class="char_c">キャラC</span>
+					<input class="pathInput" type="text" v-model="imgPath_03" placeholder="画像パスを入力してください"></input>
+					<br>
+					<span class="char_d">キャラD</span>
+					<input class="pathInput" type="text" v-model="imgPath_04" placeholder="画像パスを入力してください"></input>
+
+					<button @click="resetPath">全キャラパスリセット</button>
+
+					<!-- キャラ選択 -->
+					<h3>キャラ選択</h3>
+					<p>
+						パスを変えたら設定ボタンを押してね
+						<span class="alert">{{ alert }}</span>
+					</p>
+
+					<label class="char">
+						<input type="radio" v-model="radio_data" :value="imgPath_01" :disabled="disabled_01" checked>
+						<span class="char_a">キャラA</span>
+					</label>
+					<label class="char">
+						<input type="radio" v-model="radio_data" :value="imgPath_02" :disabled="disabled_02">
+						<span class="char_b">キャラB</span>
+					</label>
+					<label class="char">
+						<input type="radio" v-model="radio_data" :value="imgPath_03" :disabled="disabled_03">
+						<span class="char_c">キャラC</span>
+					</label>
+					<label class="char">
+						<input type="radio" v-model="radio_data" :value="imgPath_04" :disabled="disabled_04">
+						<span class="char_d">キャラD</span>
+					</label>
+
+					<button @click="getPath" :disabled="disabled_change">設定</button>
+
+					<h2>②セリフ入力</h2>
+
+					<!-- セリフ入力 -->
+					<textarea v-model="blog" placeholder="セリフを入力してください" rows="5"></textarea>
+
+					<h2>③画面イメージ</h2>
+
+					<!-- 左 -->
+					<div class="talk-wrap">
+						<div class="left-icon" :style="img_path"></div>
+						<div class="talk-left">
+							<p>{{ blog }}</p>
+						</div>
+					</div>
+
+					<!-- 右 -->
+					<div class="talk-wrap">
+						<div class="right-icon" :style="img_path"></div>
+						<div class="talk-right">
+							<p>{{ blog }}</p>
+						</div>
+					</div>
+
+					<!-- 全員の会話終了 -->
+					<div class="talk-end"></div>
+
+					<h2>④HTMLタグ</h2>
+					<p>下のタグを貼るだけだよ!</p>
+					<p>talk_styles.css を忘れずにね!</p>
+
+					<h3>キャラが左側のHTMLタグ</h3>
+					<pre>
+<code1>
+<div class="talk-wrap">
+	{{ leftIcon }}
+	<div class="talk-left">
+		<p>{{ blog }}</p>
+	</div>
+</div>
+</code1>
+</pre>
+
+
+					<h3>キャラが右側のHTMLタグ</h3>
+					<pre>
+<code2>
+<div class="talk-wrap">
+	{{ rightIcon }}
+	<div class="talk-right">
+		<p>{{ blog }}</p>
+	</div>
+</div>
+</code2>
+</pre>
+
+					<h3>キャラ全員の会話終了時に使うHTMLタグ (必須)</h3>
+					<pre>
+<code3>
+<div class="talk-end"></div>
+</code3>
+</pre>
+
+				</div>
+				<!-- #gen -->
+			</div>
+			<!-- #app / .col -->
+		</div>
+		<!-- .row -->
+	</div>
+	<!-- .container -->
+
+	<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+	<script src="./js/blog_gen.js"></script>
+	<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+	  crossorigin="anonymous"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js" integrity="sha384-b/U6ypiBEHpOf/4+1nzFpr53nxSS+GLCkfwBdFNTxtclqqenISfwAzpKaMNFNmj4"
+	  crossorigin="anonymous"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/js/bootstrap.min.js" integrity="sha384-h0AbiXch4ZDo7tp9hKZ4TsHbi047NrKGLO3SEJAg45jXxnGIfYzk4Si90RDIqNm1"
+	  crossorigin="anonymous"></script>
+</body>
+
+</html>
