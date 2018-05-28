@@ -22,9 +22,7 @@
 	background-position: center;
 	float: left;
 	display: inline-block;
-	/*左のアイコンの影の設定*/
 	box-shadow: 1px 1px 5px #aaa;
-	/*左のアイコンの枠の設定*/
 	border: 3px solid #fff;
 	margin-bottom: 10px;
 }
@@ -32,14 +30,12 @@
 .talk-left {
 	float: right;
 	position: relative;
-	/*左の会話の背景色*/
 	background: #fff;
 	border: 2px solid #666;
 	padding: 3%;
 	border-radius: 10px;
 	width: 70%;
 	margin-top: 10px;
-	/*左の会話の影の設定*/
 	box-shadow: 1px 1px 5px #aaa;
 	margin-bottom: 10px;
 }
@@ -76,9 +72,7 @@
 	background-position: center;
 	float: right;
 	display: inline-block;
-	/*右のアイコンの影の設定*/
 	box-shadow: 1px 1px 5px #aaa;
-	/*右のアイコンの枠の設定*/
 	border: 3px solid #FFF;
 	margin-bottom: 10px;
 }
@@ -86,14 +80,12 @@
 .talk-right {
 	float: left;
 	position: relative;
-	/*右の会話の背景色*/
 	background: #fff;
 	border: 2px solid #666;
 	padding: 3%;
 	border-radius: 10px;
 	width: 70%;
 	margin-top: 10px;
-	/*右の会話の影*/
 	box-shadow: 1px 1px 5px #aaa;
 	margin-bottom: 10px;
 }
