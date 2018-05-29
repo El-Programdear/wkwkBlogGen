@@ -7,6 +7,8 @@
 	var imgPath_03 = "./talk_img/c.png";
 	var imgPath_04 = "./talk_img/d.png";
 
+	const alert = "※キャラを設定してね！画像パスのないキャラは選べないよ！";
+
 	var code1 = document.querySelector("code1");
 	code1.innerHTML = code1.innerHTML.replace(/</g, "&lt;").replace(/>/, "&gt;");
 
@@ -16,6 +18,9 @@
 	var code3 = document.querySelector("code3");
 	code3.innerHTML = code3.innerHTML.replace(/</g, "&lt;").replace(/>/, "&gt;");
 
+	var date = new Date();
+	var year = date.getFullYear() + "";
+
 	var disabledChk = imgPath => {
 		if (imgPath) {
 			return false;
@@ -23,9 +28,6 @@
 			return true;
 		}
 	};
-
-	var date = new Date();
-	var year = date.getFullYear() + "";
 
 	var vm = new Vue({
 		el: "#app",
@@ -50,34 +52,22 @@
 		watch: {
 			imgPath_01: {
 				handler: function () {
-					this.disabled_01 = disabledChk(this.imgPath_01);
-					this.disabled_changeChk();
-					this.radio_data = this.imgPath_01;
-					this.fixPath(this.imgPath_01);
+					this.watchImgPath(this.imgPath_01, this.disabled_01);
 				}
 			},
 			imgPath_02: {
 				handler: function () {
-					this.disabled_02 = disabledChk(this.imgPath_02);
-					this.disabled_changeChk();
-					this.radio_data = this.imgPath_02;
-					this.fixPath(this.imgPath_02);
+					this.watchImgPath(this.imgPath_02, this.disabled_02);
 				}
 			},
 			imgPath_03: {
 				handler: function () {
-					this.disabled_03 = disabledChk(this.imgPath_03);
-					this.disabled_changeChk();
-					this.radio_data = this.imgPath_03;
-					this.fixPath(this.imgPath_03);
+					this.watchImgPath(this.imgPath_03, this.disabled_03);
 				}
 			},
 			imgPath_04: {
 				handler: function () {
-					this.disabled_04 = disabledChk(this.imgPath_04);
-					this.disabled_changeChk();
-					this.radio_data = this.imgPath_04;
-					this.fixPath(this.imgPath_04);
+					this.watchImgPath(this.imgPath_04, this.disabled_04);
 				}
 			}
 		},
@@ -118,11 +108,17 @@
 			disabled_changeChk: function () {
 				if (this.disabled_01 && this.disabled_02 && this.disabled_03 && this.disabled_04) {
 					this.disabled_change = true;
-					this.alert = "※キャラを設定してね！画像パスのないキャラは選べないよ！"
+					this.alert = alert;
 				} else {
 					this.disabled_change = false;
-					this.alert = ""
+					this.alert = "";
 				}
+			},
+			watchImgPath: function (imgPath, disabled) {
+				disabled = disabledChk(imgPath);
+				this.disabled_changeChk();
+				this.radio_data = imgPath;
+				this.fixPath(imgPath);
 			}
 		}
 	});
