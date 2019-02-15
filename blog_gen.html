@@ -20,27 +20,34 @@
           <h1>わくわくブログジェネレーター</h1>
 
           <!-- キャラ画像のパス -->
-          <h2>①キャラ設定</h2>
-          <h3>キャラ画像のパス入力</h3>
+          <h2>①キャラクター</h2>
 
-          <span class="char_a">キャラA</span>
-          <input class="pathInput" type="text" v-model="imgPath_01" placeholder="画像パスを入力してね"></input>
-          <br>
-          <span class="char_b">キャラB</span>
-          <input class="pathInput" type="text" v-model="imgPath_02" placeholder="画像パスを入力してね"></input>
-          <br>
-          <span class="char_c">キャラC</span>
-          <input class="pathInput" type="text" v-model="imgPath_03" placeholder="画像パスを入力してね"></input>
-          <br>
-          <span class="char_d">キャラD</span>
-          <input class="pathInput" type="text" v-model="imgPath_04" placeholder="画像パスを入力してね"></input>
+          <button @click="dispImgPathBtn">画像の設定をする</button>
 
-          <button @click="resetPath">全キャラパスリセット</button>
+          <div v-show="dispImgPath" class="option">
+            <hr />
+
+            <span class="char_a">キャラA</span>
+            <input class="pathInput" type="text" v-model="imgPath_01" placeholder="キャラAの画像パスを入力してね"></input>
+            <br>
+
+            <span class="char_b">キャラB</span>
+            <input class="pathInput" type="text" v-model="imgPath_02" placeholder="キャラBの画像パスを入力してね"></input>
+            <br>
+
+            <span class="char_c">キャラC</span>
+            <input class="pathInput" type="text" v-model="imgPath_03" placeholder="キャラCの画像パスを入力してね"></input>
+            <br>
+
+            <span class="char_d">キャラD</span>
+            <input class="pathInput" type="text" v-model="imgPath_04" placeholder="キャラDの画像パスを入力してね"></input>
+
+            <button @click="resetPath">全キャラのパスをリセットする</button>
+            <hr />
+          </div>
 
           <!-- キャラ選択 -->
-          <h3>キャラ選択</h3>
           <p>
-            パスを変えたら自動的にそのキャラを選びます
             <span class="alert">{{ alert }}</span>
           </p>
 
@@ -61,7 +68,7 @@
             <span class="char_d">キャラD</span>
           </label>
 
-          <button @click="getPath" :disabled="disabled_change">設定</button>
+          <button @click="getPath" :disabled="disabled_change">キャラ変更</button>
 
           <h2>②セリフ入力</h2>
 
@@ -69,6 +76,15 @@
           <textarea v-model="blog" placeholder="セリフを入力してください" rows="5"></textarea>
 
           <h2>③画面イメージ</h2>
+          <p>CSSは <a href="https://github.com/El-Programdear/wkwkBlogGen/blob/master/css/talk_styles.css" target="_blank">talk_styles.css</a>
+            を参考にしてね</p>
+          <p>
+            <button type="button" onFocus="this.blur()" @click="copy_left">キャラが左側のセリフを使いたい</button>
+            <button type="button" onFocus="this.blur()" @click="copy_right">キャラが右側のセリフを使いたい</button>
+            <button type="button" onFocus="this.blur()" @click="copy_end">会話を終了させたい</button>
+          </p>
+
+          <p class="copy_msg">{{ copy_msg }}</p>
 
           <!-- 左 -->
           <div class="talk-wrap">
@@ -89,14 +105,12 @@
           <!-- 全員の会話終了 -->
           <div class="talk-end"></div>
 
-          <h2>④HTMLタグ</h2>
-          <p>下の HTML タグを貼るだけだよ!</p>
-          <p>
-            <a href="https://github.com/El-Programdear/wkwkBlogGen/blob/master/css/talk_styles.css" target="_blank">talk_styles.css</a> も忘れずにね!</p>
 
-          <h3>キャラが左側のHTMLタグ</h3>
-          <p><button type="button" onFocus="this.blur()" @click="copy_left">copy</button></p>
-          <pre id="left_item">
+          <div class="hidden_htmls">
+
+            <!-- キャラが左側のHTMLタグ -->
+
+            <pre id="left_item">
 &lt;div class="talk-wrap"&gt;
   {{ leftIcon }}
   &lt;div class="talk-left"&gt;
@@ -106,9 +120,9 @@
 </pre>
 
 
-          <h3>キャラが右側のHTMLタグ</h3>
-          <p><button type="button" onFocus="this.blur()" @click="copy_right">copy</button></p>
-          <pre id="right_item">
+            <!-- キャラが右側のHTMLタグ -->
+
+            <pre id="right_item">
 &lt;div class="talk-wrap"&gt;
   {{ rightIcon }}
   &lt;div class="talk-right"&gt;
@@ -117,11 +131,13 @@
 &lt;/div&gt;
 </pre>
 
-          <h3>キャラ全員の会話終了時に使うHTMLタグ (必須)</h3>
-          <p><button type="button" onFocus="this.blur()" @click="copy_end">copy</button></p>
-          <pre id="end_item">
+            <!-- キャラ全員の会話終了時に使うHTMLタグ (必須) -->
+
+            <pre id="end_item">
 &lt;div class="talk-end"&gt;&lt;/div&gt;
 </pre>
+
+          </div>
 
         </div>
         <!-- #gen -->

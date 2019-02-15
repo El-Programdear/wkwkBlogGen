@@ -42,6 +42,8 @@
       disabled_04: false,
       disabled_change: false,
       alert: "",
+      copy_msg: "キャラとセリフを決めたら上のボタンを押してね",
+      dispImgPath: false,
     },
     watch: {
       imgPath_01: {
@@ -99,6 +101,9 @@
         this.disabled_04 = disabledChk(this.imgPath_04);
         this.disabled_changeChk();
       },
+      dispImgPathBtn: function () {
+        this.dispImgPath = !this.dispImgPath;
+      },
       disabled_changeChk: function () {
         if (this.disabled_01 && this.disabled_02 && this.disabled_03 && this.disabled_04) {
           this.disabled_change = true;
@@ -116,12 +121,15 @@
       },
       copy_left: function () {
         this.exeCopy(document.getElementById('left_item'));
+        this.copy_msg = "左側になる HTML をコピーしました";
       },
       copy_right: function () {
         this.exeCopy(document.getElementById('right_item'));
+        this.copy_msg = "右側になる HTML をコピーしました";
       },
       copy_end: function () {
         this.exeCopy(document.getElementById('end_item'));
+        this.copy_msg = "会話を終了するための HTML をコピーしました";
       },
       exeCopy: function (item) {
         var copy_target = "";

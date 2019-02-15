@@ -4,146 +4,158 @@
 /* CSS Document */
 
 body {
-	font: 14px/1.6 "Hiragino Kaku Gothic Pro", Osaka, "メイリオ", "ＭＳ Ｐゴシック", "MS PGothic", Verdana, Arial, sans-serif;
-	margin: 0;
-	color: #313131;
-	background-color: #9797ad;
-	background-image: url("https://www.transparenttextures.com/patterns/food.png");
+  font: 14px/1.6 "Hiragino Kaku Gothic Pro", Osaka, "メイリオ", "ＭＳ Ｐゴシック", "MS PGothic", Verdana, Arial, sans-serif;
+  margin: 0;
+  color: #313131;
+  background-color: #9797ad;
+  background-image: url("https://www.transparenttextures.com/patterns/food.png");
 }
 
 img {
-	outline: none;
-	border-style: none;
+  outline: none;
+  border-style: none;
 }
 
 a {
-	color: blue;
-	-webkit-transition: all 0.5s;
-	-moz-transition: all 0.5s;
-	transition: all 0.5s;
+  color: blue;
+  -webkit-transition: all 0.5s;
+  -moz-transition: all 0.5s;
+  transition: all 0.5s;
 }
 
 a:visited {
-	color: blue;
-	-webkit-transition: all 0.5s;
-	-moz-transition: all 0.5s;
-	transition: all 0.5s;
+  color: blue;
+  -webkit-transition: all 0.5s;
+  -moz-transition: all 0.5s;
+  transition: all 0.5s;
 }
 
 a:hover {
-	color: #F5A862;
-	-webkit-transition: all 0.5s;
-	-moz-transition: all 0.5s;
-	transition: all 0.5s;
+  color: #F5A862;
+  -webkit-transition: all 0.5s;
+  -moz-transition: all 0.5s;
+  transition: all 0.5s;
 }
 
 footer {
-	font-size: 80%;
-	width: 100%;
-	text-align: center;
-	padding-top: 10px;
-	padding-bottom: 10px;
-	background-color: #313131;
+  font-size: 80%;
+  width: 100%;
+  text-align: center;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  background-color: #313131;
 }
 
 footer address {
-	color: #fff;
-	letter-spacing: 5px;
+  color: #fff;
+  letter-spacing: 5px;
 }
 
 h1,
 h2,
 h3 {
-	font-weight: bold;
-	margin: 16px 0;
+  font-weight: bold;
+  margin: 16px 0;
 }
 
 h1 {
-	font-size: 40px;
+  font-size: 40px;
 }
 
 h2 {
-	font-size: 24px;
+  font-size: 24px;
 }
 
 h3 {
-	font-size: 16px;
+  font-size: 16px;
 }
 
 p {
-	margin: 0;
+  margin: 0;
 }
 
 button {
-	margin: 8px;
+  margin: 8px;
 }
 
 pre {
-	padding: 1em;
-	border: 1px solid #000;
-	width: auto;
-	_width: 90%;
-	overflow: auto;
-	_overflow: scroll;
-	color: #000;
-	background-color: #f6f6f6;
-	font-family: 'MS Gothic', monospace;
+  padding: 1em;
+  border: 1px solid #000;
+  width: auto;
+  _width: 90%;
+  overflow: auto;
+  _overflow: scroll;
+  color: #000;
+  background-color: #f6f6f6;
+  font-family: 'MS Gothic', monospace;
 }
 
 input[type=text],
 textarea {
-	width: 100%;
-	box-sizing: border-box;
-	padding: 8px;
+  width: 100%;
+  box-sizing: border-box;
+  padding: 8px;
 }
 
 #gen {
-	background-color: #fff;
-	padding: 16px 32px;
-	margin: 32px 0;
+  background-color: #fff;
+  padding: 16px 32px;
+  margin: 32px 0;
 }
 
 .pathInput {
-	margin: 8px 0;
+  margin: 8px 0;
 }
 
 .alert {
-	color: red;
+  color: red;
 }
 
 .char_a,
 .char_b,
 .char_c,
 .char_d {
-	font-weight: bolder;
-	margin: 0 8px;
-	-webkit-text-stroke: .5px #000;
+  font-weight: bolder;
+  margin: 0 8px;
+  -webkit-text-stroke: .5px #000;
 }
 
 .char_a {
-	color: #13F40B;
+  color: #13F40B;
 }
 
 .char_b {
-	color: #2EA8EF;
+  color: #2EA8EF;
 }
 
 .char_c {
-	color: #F5C40B;
+  color: #F5C40B;
 }
 
 .char_d {
-	color: #EF2E9E;
+  color: #EF2E9E;
 }
 
 .footerText {
-	color: white;
+  color: white;
 }
 
 .companyLink {
-	text-decoration: none
+  text-decoration: none
 }
 
 .company {
-	color: #ffff40;
+  color: #ffff40;
+}
+
+.option {
+  background: #cccccc;
+}
+
+.hidden_htmls {
+  display: none;
+}
+
+.copy_msg {
+  font-weight: bold;
 }
