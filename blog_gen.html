@@ -91,29 +91,30 @@
 
           <p class="copy_msg">{{ copy_msg }}</p>
 
-          <!-- 左 -->
-          <div class="talk-wrap">
-            <div class="left-icon" :style="img_path"></div>
-            <div class="talk-left">
-              <p>{{ blog }}</p>
+          <div class="talk-sample">
+            <!-- 左 -->
+            <div class="talk-wrap">
+              <div class="left-icon" :style="img_path"></div>
+              <div class="talk-left">
+                <p>{{ blog }}</p>
+              </div>
             </div>
-          </div>
 
-          <!-- 右 -->
-          <div class="talk-wrap">
-            <div class="right-icon" :style="img_path"></div>
-            <div class="talk-right">
-              <p>{{ blog }}</p>
+            <!-- 右 -->
+            <div class="talk-wrap">
+              <div class="right-icon" :style="img_path"></div>
+              <div class="talk-right">
+                <p>{{ blog }}</p>
+              </div>
             </div>
-          </div>
 
-          <!-- 全員の会話終了 -->
-          <div class="talk-end"></div>
+            <!-- 全員の会話終了 -->
+            <div class="talk-end"></div>
+          </div>
+          <!-- .talk-sample -->
 
           <div class="hidden_htmls">
-
             <!-- キャラが左側のHTMLタグ -->
-
             <pre id="left_item">
 &lt;div class="talk-wrap"&gt;
   {{ leftIcon }}
@@ -125,7 +126,6 @@
 
 
             <!-- キャラが右側のHTMLタグ -->
-
             <pre id="right_item">
 &lt;div class="talk-wrap"&gt;
   {{ rightIcon }}
@@ -136,7 +136,6 @@
 </pre>
 
             <!-- キャラ全員の会話終了時に使うHTMLタグ (必須) -->
-
             <pre id="end_item">
 &lt;div class="talk-end"&gt;&lt;/div&gt;
 </pre>

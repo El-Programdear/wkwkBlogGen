@@ -174,3 +174,9 @@ textarea {
   color: #ffff40;
   text-decoration: none;
 }
+
+.talk-sample {
+  padding: 16px;
+  margin: 12px 0;
+  background: #ccc;
+}
