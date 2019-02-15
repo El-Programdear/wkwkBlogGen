@@ -150,6 +150,11 @@ textarea {
 
 .option {
   background: #cccccc;
+  padding: 16px;
+}
+
+.inner_option {
+  margin: 8px, 16px;
 }
 
 .hidden_htmls {
@@ -158,6 +163,10 @@ textarea {
 
 .copy_msg {
   font-weight: bold;
+}
+
+#footer {
+  text-align: center;
 }
 
 .eglab {

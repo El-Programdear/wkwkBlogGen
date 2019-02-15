@@ -42,7 +42,7 @@
       disabled_04: false,
       disabled_change: false,
       alert: "",
-      copy_msg: "キャラとセリフを決めたら上のボタンを押してね",
+      copy_msg: "なんかいいことねえかなあ",
       dispImgPath: false,
     },
     watch: {
@@ -121,15 +121,15 @@
       },
       copy_left: function () {
         this.exeCopy(document.getElementById('left_item'));
-        this.copy_msg = "左側になる HTML をコピーしました";
+        this.copy_msg = "左側の HTML をコピーしました";
       },
       copy_right: function () {
         this.exeCopy(document.getElementById('right_item'));
-        this.copy_msg = "右側になる HTML をコピーしました";
+        this.copy_msg = "右側の HTML をコピーしました";
       },
       copy_end: function () {
         this.exeCopy(document.getElementById('end_item'));
-        this.copy_msg = "会話を終了するための HTML をコピーしました";
+        this.copy_msg = "会話終了後の HTML をコピーしました";
       },
       exeCopy: function (item) {
         var copy_target = "";

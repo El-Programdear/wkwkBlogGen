@@ -25,25 +25,30 @@
           <button @click="dispImgPathBtn">画像の設定をする</button>
 
           <div v-show="dispImgPath" class="option">
-            <hr />
+            <div class="inner_option">
+              <span class="char_a">キャラA</span>
+              <input class="pathInput" type="text" v-model="imgPath_01" placeholder="キャラAの画像パスを入力してね"></input>
+              <br>
+            </div>
 
-            <span class="char_a">キャラA</span>
-            <input class="pathInput" type="text" v-model="imgPath_01" placeholder="キャラAの画像パスを入力してね"></input>
-            <br>
+            <div class="inner_option">
+              <span class="char_b">キャラB</span>
+              <input class="pathInput" type="text" v-model="imgPath_02" placeholder="キャラBの画像パスを入力してね"></input>
+              <br>
+            </div>
 
-            <span class="char_b">キャラB</span>
-            <input class="pathInput" type="text" v-model="imgPath_02" placeholder="キャラBの画像パスを入力してね"></input>
-            <br>
+            <div class="inner_option">
+              <span class="char_c">キャラC</span>
+              <input class="pathInput" type="text" v-model="imgPath_03" placeholder="キャラCの画像パスを入力してね"></input>
+              <br>
+            </div>
 
-            <span class="char_c">キャラC</span>
-            <input class="pathInput" type="text" v-model="imgPath_03" placeholder="キャラCの画像パスを入力してね"></input>
-            <br>
-
-            <span class="char_d">キャラD</span>
-            <input class="pathInput" type="text" v-model="imgPath_04" placeholder="キャラDの画像パスを入力してね"></input>
+            <div class="inner_option">
+              <span class="char_d">キャラD</span>
+              <input class="pathInput" type="text" v-model="imgPath_04" placeholder="キャラDの画像パスを入力してね"></input>
+            </div>
 
             <button @click="resetPath">全キャラのパスをリセットする</button>
-            <hr />
           </div>
 
           <!-- キャラ選択 -->
@@ -79,9 +84,9 @@
           <p>CSSは <a href="https://github.com/El-Programdear/wkwkBlogGen/blob/master/css/talk_styles.css" target="_blank">talk_styles.css</a>
             を参考にしてね</p>
           <p>
-            <button type="button" onFocus="this.blur()" @click="copy_left">キャラが左側のセリフを使いたい</button>
-            <button type="button" onFocus="this.blur()" @click="copy_right">キャラが右側のセリフを使いたい</button>
-            <button type="button" onFocus="this.blur()" @click="copy_end">会話を終了させたい</button>
+            <button type="button" onFocus="this.blur()" @click="copy_left">キャラが左側で使いたい</button>
+            <button type="button" onFocus="this.blur()" @click="copy_right">キャラが右側で使いたい</button>
+            <button type="button" onFocus="this.blur()" @click="copy_end">会話を終了したい</button>
           </p>
 
           <p class="copy_msg">{{ copy_msg }}</p>
