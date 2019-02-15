@@ -159,3 +159,8 @@ textarea {
 .copy_msg {
   font-weight: bold;
 }
+
+.eglab {
+  color: #ffff40;
+  text-decoration: none;
+}
